@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/img/favicon.png') }}">
 
-    <title>Painel Confeitaria</title>
+    <title>Confeitaria - Painel Administrativo</title>
 
     <!-- vendor css -->
     <link href="{{ asset('admin/lib/%40fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
