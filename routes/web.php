@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('admin.index');
-});
+//Rotas do painel
+Route::get("/", "PainelController@index")->name("painel.index");
+Route::get("/pages", "PainelController@page_manager")->name("painel.pages");
