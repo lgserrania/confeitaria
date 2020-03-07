@@ -12246,8 +12246,8 @@ textarea.parsley-success:focus {
   background-color: #1b2e4b; }
 
 /* ###### 4.9 Perfect Scrollbar ###### */
-.ps {
-  overflow: hidden; }
+/*.ps {
+  overflow: hidden; }*/
   .ps > .ps__rail-y {
     width: 3px;
     background-color: rgba(72, 83, 114, 0.06);
@@ -13786,7 +13786,7 @@ textarea.parsley-success:focus {
   position: relative;
   padding: 15px;
   height: calc(100% - 54px);
-  overflow-y: auto; }
+  /* overflow-y: auto;*/ } 
   @media (min-width: 576px) {
     .content-body {
       padding: 20px; } }

@@ -12,5 +12,22 @@
 */
 
 //Rotas do painel
-Route::get("/", "PainelController@index")->name("painel.index");
-Route::get("/pages", "PainelController@page_manager")->name("painel.pages");
+Route::get("/painel", "PainelController@index")->name("painel.index");
+
+//Vendas
+Route::get("/painel/vendas/dados", "VendasController@dados")->name("painel.vendas.dados");
+
+//Pedidos
+Route::get("/painel/pedidos/controle", "PedidosController@controle")->name("painel.pedidos.controle");
+Route::get("/painel/pedidos/calendario", "PedidosController@calendario")->name("painel.pedidos.calendario");
+
+//Produtos
+Route::get("/painel/produtos/bolos", "ProdutosController@bolos")->name("painel.produtos.bolos");
+Route::get("/painel/produtos/variados", "ProdutosController@variados")->name("painel.produtos.variados");
+
+//Utilitários
+Route::get("/painel/utilitarios/calculadora", "UtilitariosController@calculadora")->name("painel.utilitarios.calculadora");
+Route::get("/painel/utilitarios/mensagens", "UtilitariosController@mensagens")->name("painel.utilitarios.mensagens");
+
+//Clientes
+Route::get("/painel/clientes/contatos", "ClientesController@contatos")->name("painel.clientes.contatos");
