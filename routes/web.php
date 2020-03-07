@@ -28,6 +28,7 @@ Route::get("/painel/produtos/variados", "ProdutosController@variados")->name("pa
 //Utilitários
 Route::get("/painel/utilitarios/calculadora", "UtilitariosController@calculadora")->name("painel.utilitarios.calculadora");
 Route::get("/painel/utilitarios/mensagens", "UtilitariosController@mensagens")->name("painel.utilitarios.mensagens");
-
+Route::get("/painel/utilitarios/mensagens/{categoria}", "UtilitariosController@mensagens_categoria")->name("painel.utilitarios.mensagens.categoria");
+Route::get("/painel/utilitarios/mensagens/lida/{id}", "UtilitariosController@mensagem_lida");
 //Clientes
 Route::get("/painel/clientes/contatos", "ClientesController@contatos")->name("painel.clientes.contatos");
