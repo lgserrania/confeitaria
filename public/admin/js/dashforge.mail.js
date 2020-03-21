@@ -20,9 +20,6 @@ $(function(){
   $('.mail-group-body .media').on('click', function(e){
     var elements = $(this).children("input");
     var qtd = elements.length;
-    for(var i = 0; i < qtd; i++){
-      console.log(elements[i].value);
-    }
     // removing previous selected item
     $('.mail-group .selected').removeClass('selected');
 

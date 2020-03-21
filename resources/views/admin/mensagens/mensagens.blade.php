@@ -82,11 +82,11 @@
                         @endphp
                     @endif
                 @endforeach
-                <div class="pd-t-1 pd-b-5 pd-x-5">
+                {{--  <div class="pd-t-1 pd-b-5 pd-x-5">
                     <a href="#"
                         class="btn btn-xs btn-block btn-light bd-0 tx-uppercase tx-10 tx-spacing-1 tx-medium mn-ht-0">Carregar
                         mais</a>
-                </div>
+                </div>  --}}
             </div><!-- mail-group-body -->
         </div><!-- mail-group -->
 
@@ -141,7 +141,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{asset('admin/quill/quill.min.js')}}"></script>
+<script src="{{asset('admin/lib/quill.min.js')}}"></script>
 <script src="{{asset('admin/js/dashforge.mail.js')}}"></script>
 <!-- append theme customizer -->
 <script src="{{asset('admin/lib/js-cookie/js.cookie.js')}}"></script>

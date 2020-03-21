@@ -14,13 +14,9 @@ class UtilitariosController extends Controller
     }
 
     public function mensagens(){
-        $count_mensagens = DB::table("mensagems")->select("COUNT(assunto), assunto")->get();
-        foreach($count_mensagens as $count){
-            echo $count;
-        }
-        die();
         $mensagens = Mensagem::orderBy("created_at", "DESC")->get();
-        return view("admin.mensagens.mensagens")->with("mensagens", $mensagens);
+        return view("admin.mensagens.mensagens")->with("mensagens", $mensagens)
+                                                ->with("todas", $mensagens);
     }
 
     public function mensagem_lida($id){

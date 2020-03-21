@@ -32,3 +32,6 @@ Route::get("/painel/utilitarios/mensagens/{categoria}", "UtilitariosController@m
 Route::get("/painel/utilitarios/mensagens/lida/{id}", "UtilitariosController@mensagem_lida");
 //Clientes
 Route::get("/painel/clientes/contatos", "ClientesController@contatos")->name("painel.clientes.contatos");
+Route::post("/painel/clientes/salvar", "ClientesController@salvar")->name("painel.clientes.salvar");
+Route::get("/painel/clientes/deletar/{id}", "ClientesController@deletar")->name("painel.clientes.deletar");
+Route::post("/painel/clientes/atualizar/{id}", "ClientesController@atualizar")->name("painel.clientes.atualizar");

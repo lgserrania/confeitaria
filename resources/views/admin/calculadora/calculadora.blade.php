@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{asset('admin/css/dashforge.demo.css')}}"><!-- select -->
 <link rel="stylesheet" href="{{asset('admin/css/dashforge.profile.css')}}"><!-- detalhes pedidos -->
 <link rel="stylesheet" href="{{asset('admin/css/dashforge.filemgr.css')}}">
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+//<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
 @endsection
 

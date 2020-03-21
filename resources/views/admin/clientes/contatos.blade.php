@@ -19,7 +19,7 @@
                     <span data-toggle="tooltip" title="Todos Contatos" data-placement="right"><i
                             data-feather="users"></i></span>
                 </a>
-                <a href="#tabPhoneCall" class="nav-link" data-toggle="tab">
+                {{--  <a href="#tabPhoneCall" class="nav-link" data-toggle="tab">
                     <span data-toggle="tooltip" title="Contato recente" data-placement="right"><i
                             data-feather="phone-call"></i></span>
                 </a>
@@ -30,7 +30,7 @@
                 <a href="#tabExport" class="nav-link" data-toggle="tab">
                     <span data-toggle="tooltip" title="Export Contacts" data-placement="right"><i
                             data-feather="upload"></i></span>
-                </a>
+                </a>  --}}
             </nav>
         </div><!-- contact-navleft -->
 
@@ -48,164 +48,46 @@
                 <div class="tab-content">
                     <div id="tabContact" class="tab-pane fade active show">
                         <div class="pd-y-20 pd-x-10 contact-list">
-                            <label id="contactA" class="contact-list-divider">A</label>
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><span
-                                        class="avatar-initial rounded-circle bg-gray-700">A</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Abigail Johnson</h6>
-                                    <span class="tx-12">+1-234-567-890</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><img src="../../assets/img/img14.jpg"
-                                        class="rounded-circle" alt=""></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Archie Cantones</h6>
-                                    <span class="tx-12">archie@cantones.com</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><span
-                                        class="avatar-initial rounded-circle bg-primary">a</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Allan Rey Palban</h6>
-                                    <span class="tx-12">allanr@palban.com</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-offline"><span
-                                        class="avatar-initial rounded-circle bg-info">a</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Aileen Mante</h6>
-                                    <span class="tx-12">+1-234-567-890</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <label id="contactB" class="contact-list-divider">B</label>
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><img src="../../assets/img/img11.jpg"
-                                        class="rounded-circle" alt=""></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Brenda Aceron</h6>
-                                    <span class="tx-12">brenda@aceron.com</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><span
-                                        class="avatar-initial rounded-circle bg-indigo">B</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Brandibelle Yap</h6>
-                                    <span class="tx-12">byap@urmail.com</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><span
-                                        class="avatar-initial rounded-circle bg-gray-800">B</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Brejette Bunggay</h6>
-                                    <span class="tx-12">+1-234-567-890</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-
-                            <label id="contactC" class="contact-list-divider">C</label>
-
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><img src="../../assets/img/img13.jpg"
-                                        class="rounded-circle" alt=""></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Camille Audrey</h6>
-                                    <span class="tx-12">+1-234-567-890</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><img src="../../assets/img/img12.jpg"
-                                        class="rounded-circle" alt=""></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Christine Lerio</h6>
-                                    <span class="tx-12">+1-234-567-890</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-
-                            <label id="contactD" class="contact-list-divider">D</label>
-
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-offline"><span
-                                        class="avatar-initial rounded-circle bg-primary">D</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Daniel Calinawan</h6>
-                                    <span class="tx-12">daniel@youremail.com</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-
-                            <label id="contactE" class="contact-list-divider">E</label>
-
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-offline"><span
-                                        class="avatar-initial rounded-circle bg-success">E</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Elvis Vircede</h6>
-                                    <span class="tx-12">+63929-123-4567</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
-                            <div class="media">
-                                <div class="avatar avatar-sm avatar-online"><span
-                                        class="avatar-initial rounded-circle bg-gray-700">E</span></div>
-                                <div class="media-body mg-l-10">
-                                    <h6 class="tx-13 mg-b-3">Elena Salubre</h6>
-                                    <span class="tx-12">e.salubre@myemail.com</span>
-                                </div><!-- media-body -->
-                                <nav>
-                                    <a href="#"><i data-feather="star"></i></a>
-                                    <a href="#"><i data-feather="edit-2"></i></a>
-                                </nav>
-                            </div><!-- media -->
+                            @php
+                                $letra = "";    
+                            @endphp
+                            @foreach($clientes as $cliente)
+                                @if($letra != strtoupper($cliente->nome[0]))
+                                    @php
+                                        $letra = strtoupper($cliente->nome[0]);
+                                    @endphp
+                                    <label id="contactA" class="contact-list-divider">{{$letra}}</label>
+                                @endif
+                                <div class="media">
+                                    <input type="hidden" id="" name="" value="{{$cliente->nome}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->empresa}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->email}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->whatsapp}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->telefone}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->rua}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->numero}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->cidade}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->estado}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->id}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->facebook}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->linkedin}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->instagram}}">
+                                    <input type="hidden" id="" name="" value="{{$cliente->notas}}">
+                                    <div class="avatar avatar-sm avatar-online"><span
+                                            class="avatar-initial rounded-circle bg-gray-700">{{ strtoupper($cliente->nome[0]) }}</span></div>
+                                    <div class="media-body mg-l-10">
+                                        <h6 class="tx-13 mg-b-3">{{$cliente->nome}}</h6>
+                                        <span class="tx-12">{{$cliente->whatsapp}}</span>
+                                    </div><!-- media-body -->
+                                    <nav>
+                                        {{--  <a href="#"><i data-feather="star"></i></a>  --}}
+                                        <a href="#"><i data-feather="edit-2"></i></a>
+                                    </nav>
+                                </div><!-- media -->
+                            @endforeach
                         </div><!-- contact-list -->
                     </div><!-- tab-pane -->
-                    <div id="tabPhoneCall" class="tab-pane fade">
+                    {{--  <div id="tabPhoneCall" class="tab-pane fade">
                         <div class="pd-y-20 pd-x-10 contact-list">
                             <label class="contact-list-divider">Recently Contacted</label>
                             <div class="media">
@@ -392,7 +274,7 @@
                             </div><!-- form-group -->
                             <button class="btn btn-sm btn-primary">Exportar</button>
                         </div>
-                    </div><!-- tab-pane -->
+                    </div><!-- tab-pane -->  --}}
                 </div><!-- tab-content -->
             </div><!-- contact-sidebar-body -->
         </div><!-- contact-sidebar -->
@@ -406,7 +288,7 @@
                         data-feather="more-horizontal"></i></a>
             </div><!-- contact-content-header -->
 
-            <div class="contact-content-body">
+            <div class="contact-content-body d-none" id="contact-body">
                 <div class="tab-content">
 
                     <div id="contactInformation" class="tab-pane show active pd-20 pd-xl-25">
@@ -428,18 +310,18 @@
                             <div class="col-6 col-sm">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Nome</label>
-                                <p class="mg-b-0">Nome completo aqui</p>
+                                <p class="mg-b-0" id="nome">Nome completo aqui</p>
                             </div><!-- col -->
                             <div class="col-6 col-sm">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Empresa</label>
-                                <p class="mg-b-0">Nome da Empresa</p>
+                                <p class="mg-b-0" id="Empresa">Nome da Empresa</p>
                             </div><!-- col -->
                             <div class="col-sm mg-t-20 mg-sm-t-0">
                                 <label
-                                    class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Cód.
+                                    class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10" >Cód.
                                     Contato</label>
-                                <p class="mg-b-0">#0123456</p>
+                                <p class="mg-b-0" id="id">#0123456</p>
                             </div><!-- col -->
                         </div><!-- row -->
 
@@ -449,34 +331,31 @@
                             <div class="col-6 col-sm-4">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Whatsapp</label>
-                                <p class="tx-primary tx-rubik mg-b-0">+55 35 9 9898 9898</p>
+                                <p class="tx-primary tx-rubik mg-b-0" id="whatsapp">+55 35 9 9898 9898</p>
                             </div>
                             <div class="col-6 col-sm-4">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Telefone
-                                    1</label>
-                                <p class="tx-primary tx-rubik mg-b-0">+55 35 9 9898 9898</p>
+                                    </label>
+                                <p class="tx-primary tx-rubik mg-b-0">Não informado</p>
                             </div>
                             <div class="col-6 col-sm-4 mg-t-20 mg-sm-t-0">
-                                <label
+                                {{--  <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Telefone
                                     2</label>
-                                <p class="tx-primary tx-rubik mg-b-0">+55 35 9 9898 9898</p>
+                                <p class="tx-primary tx-rubik mg-b-0">+55 35 9 9898 9898</p>  --}}
                             </div>
                             <div class="col-sm-4 mg-t-20 mg-sm-t-30">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Endereço
                                     de Email 1</label>
-                                <p class="tx-primary mg-b-0">exemplo@exemplo.com.br</p>
+                                <p class="tx-primary mg-b-0" id="email">exemplo@exemplo.com.br</p>
                             </div>
-                            <!-- <div class="col-sm-4 mg-t-20 mg-sm-t-30">
-                  <label class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Job Position</label>
-                  <p class="mg-b-0">President &amp; CEO</p>
-                </div> -->
+                            
                             <div class="col-sm-6 mg-t-20 mg-sm-t-30">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Endereço</label>
-                                <p class="mg-b-0">4658 Kenwood Place<br>Pompano Beach, FL 33060, United States</p>
+                                <p class="mg-b-0" id="endereco">4658 Kenwood Place<br>Pompano Beach, FL 33060, United States</p>
                             </div>
                             <div class="col-sm-6 mg-t-20 mg-sm-t-30">
                                 <label
@@ -485,23 +364,20 @@
                                 <p class="tx-primary mg-b-0">http://pluzup.com.br</p>
                             </div>
                             <div class="col-sm-6 mg-t-20 mg-sm-t-30">
-                                <label
+                                {{--  <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Midias
                                     Sociais</label>
                                 <nav class="nav nav-social">
                                     <a href="#" class="nav-link"><i data-feather="facebook"></i></a>
                                     <a href="#" class="nav-link"><i data-feather="instagram"></i></a>
                                     <a href="#" class="nav-link"><i data-feather="linkedin"></i></a>
-                                </nav>
+                                </nav>  --}}
                             </div><!-- col -->
                             <div class="col-sm mg-t-20 mg-sm-t-30">
                                 <label
                                     class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Notas
                                     sobre o cliente</label>
-                                <p class="tx-13 mg-b-0">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout. The point of using
-                                    Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
-                                    to using 'Content here, content here', making it look like readable English.</p>
+                                <p class="tx-13 mg-b-0" id="notas"></p>
                             </div>
                         </div><!-- row -->
                     </div>
@@ -510,14 +386,6 @@
             </div><!-- contact-content-body -->
 
             <div class="contact-content-sidebar">
-                <div class="clearfix mg-b-25">
-                    <div id="contactAvatar" class="pos-relative float-left">
-                        <div class="avatar avatar-xl"><span
-                                class="avatar-initial rounded-circle bg-gray-700 tx-normal">A</span></div>
-                        <a href="#" class="contact-edit-photo" data-toggle="tooltip" title="Upload Photo"><i
-                                data-feather="edit-2"></i></a>
-                    </div>
-                </div>
                 <h5 id="contactName" class="tx-18 tx-xl-20 mg-b-5">Abigail Johnson</h5>
                 <p class="tx-13 tx-lg-12 tx-xl-13 tx-color-03 mg-b-20">President &amp; CEO - ThemePixels, Inc.</p>
                 <nav class="contact-call-nav mg-b-20">
@@ -557,46 +425,67 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
 
-                <h5 class="tx-18 tx-sm-20 mg-b-20">Create New Contact</h5>
-                <p class="tx-13 tx-color-03 mg-b-30">You can add more information than what you see here, such as
-                    address and birthday by clicking <span class="tx-color-02">Add More Fields</span> button below to
-                    bring up more options.</p>
+                <h5 class="tx-18 tx-sm-20 mg-b-20">Adicionar novo contato</h5>
+                <p class="tx-13 tx-color-03 mg-b-30">Informe os dados do novo contato.</p>
 
                 <div class="d-sm-flex">
-                    <div class="mg-sm-r-30">
-                        <div class="pos-relative d-inline-block mg-b-20">
-                            <div class="avatar avatar-xxl"><span
-                                    class="avatar-initial rounded-circle bg-gray-700 tx-normal"><i
-                                        class="icon ion-md-person"></i></span></div>
-                            <a href="#" class="contact-edit-photo"><i data-feather="edit-2"></i></a>
-                        </div>
-                    </div><!-- col -->
                     <div class="flex-fill">
-                        <h6 class="mg-b-10">Personal Information</h6>
-                        <div class="form-group mg-b-10">
-                            <input type="text" class="form-control" placeholder="Firstname">
-                        </div><!-- form-group -->
-                        <div class="form-group mg-b-10">
-                            <input type="text" class="form-control" placeholder="Lastname">
-                        </div><!-- form-group -->
+                        <form action="{{route('painel.clientes.salvar')}}" method="post">
+                            @csrf
+                            <h6 class="mg-b-10">Informações pessoais</h6>
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="nome" placeholder="Nome">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="empresa" placeholder="Empresa (se tiver)">
+                            </div><!-- form-group -->
 
-                        <h6 class="mg-t-20 mg-b-10">Contact Information</h6>
+                            <h6 class="mg-t-20 mg-b-10">Informações de contato</h6>
 
-                        <div class="form-group mg-b-10">
-                            <input type="text" class="form-control" placeholder="Phone number">
-                        </div><!-- form-group -->
-                        <div class="form-group mg-b-10">
-                            <input type="email" class="form-control" placeholder="Email address">
-                        </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="whatsapp" placeholder="Whatsapp">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="email" class="form-control" name="telefone" placeholder="Telefone (Deixe em branco se for o mesmo do whatsapp)">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            </div><!-- form-group -->
 
-                        <h6 class="mg-t-20 mg-b-10">Notes</h6>
-                        <textarea class="form-control" rows="2" placeholder="Add notes"></textarea>
+                            <h6 class="mg-t-20 mg-b-10">Endereço</h6>
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="estado" placeholder="Estado">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="cidade" placeholder="Cidade">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="rua" placeholder="Rua">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="numero" placeholder="Numero">
+                            </div><!-- form-group -->
+
+                            <h6 class="mg-t-20 mg-b-10">Redes Sociais</h6>
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="facebook" placeholder="Facebook">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="instagram" placeholder="Instagram">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="linkedin" placeholder="Linkedin">
+                            </div><!-- form-group -->
+
+                            <h6 class="mg-t-20 mg-b-10">Notas</h6>
+                            <textarea class="form-control" rows="2" name="notas" placeholder="Insira aqui notas sobre o contato"></textarea>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
                     </div><!-- col -->
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="wd-100p d-flex flex-column flex-sm-row justify-content-end">
-                    <button type="button" class="btn btn-primary mg-b-5 mg-sm-b-0">Save Contact</button>
                     <button type="button" class="btn btn-secondary mg-sm-l-5" data-dismiss="modal">Discard</button>
                 </div>
             </div><!-- modal-footer -->
@@ -612,57 +501,67 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
 
-                <h5 class="tx-18 tx-sm-20 mg-b-20">Edit Contact</h5>
-                <p class="tx-13 tx-color-03 mg-b-30">You can add more information than what you see here, such as
-                    address and birthday by clicking <span class="tx-color-02">Add More Fields</span> button below to
-                    bring up more options.</p>
+                <h5 class="tx-18 tx-sm-20 mg-b-20">Editando contato</h5>
 
                 <div class="d-sm-flex">
-                    <div class="mg-sm-r-30">
-                        <div class="pos-relative d-inline-block mg-b-20">
-                            <div class="avatar avatar-xxl"><span
-                                    class="avatar-initial rounded-circle bg-gray-700 tx-normal">A</span></div>
-                            <a href="#" class="contact-edit-photo"><i data-feather="edit-2"></i></a>
-                        </div>
-                    </div><!-- col -->
                     <div class="flex-fill">
-                        <h6 class="mg-b-10">Personal Information</h6>
-                        <div class="form-group mg-b-10">
-                            <input type="text" class="form-control" placeholder="Firstname" value="Abigail">
-                        </div><!-- form-group -->
-                        <div class="form-group mg-b-10">
-                            <input type="text" class="form-control" placeholder="Lastname" value="Johnson">
-                        </div><!-- form-group -->
+                        <form id="formEdita" action="" method="post">
+                            @csrf
+                            <h6 class="mg-b-10">Informações pessoais</h6>
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="nome" id="edtNome" placeholder="Nome">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="empresa" id="edtEmpresa" placeholder="Empresa (se tiver)">
+                            </div><!-- form-group -->
 
-                        <h6 class="mg-t-20 mg-b-10">Contact Information</h6>
+                            <h6 class="mg-t-20 mg-b-10">Informações de contato</h6>
 
-                        <div class="form-group mg-b-10">
-                            <input type="text" class="form-control" placeholder="Phone number" value="+1 234 567 8910">
-                        </div><!-- form-group -->
-                        <div class="form-group mg-b-10">
-                            <input type="email" class="form-control" placeholder="Email address"
-                                value="me@themepixels.me">
-                        </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="whatsapp" id="edtWhatsapp" placeholder="Whatsapp">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="email" class="form-control" name="telefone" id="edtTelefone" placeholder="Telefone (Deixe em branco se for o mesmo do whatsapp)">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="email" class="form-control" name="email" id="edtEmail" placeholder="Email">
+                            </div><!-- form-group -->
 
-                        <h6 class="mg-t-20 mg-b-10">Notes</h6>
-                        <textarea class="form-control" rows="2" placeholder="Add notes"></textarea>
+                            <h6 class="mg-t-20 mg-b-10">Endereço</h6>
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="estado" id="edtEstado" placeholder="Estado">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="cidade" id="edtCidade" placeholder="Cidade">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="rua" id="edtRua" placeholder="Rua">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="numero" id="edtNumero" placeholder="Numero">
+                            </div><!-- form-group -->
+
+                            <h6 class="mg-t-20 mg-b-10">Redes Sociais</h6>
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="facebook" id="edtFacebook" placeholder="Facebook">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="instagram" id="edtInstagram" placeholder="Instagram">
+                            </div><!-- form-group -->
+                            <div class="form-group mg-b-10">
+                                <input type="text" class="form-control" name="linkedin" id="edtLinkedin" placeholder="Linkedin">
+                            </div><!-- form-group -->
+
+                            <h6 class="mg-t-20 mg-b-10">Notas</h6>
+                            <textarea class="form-control" rows="2" name="notas" id="edtNotas" placeholder="Insira aqui notas sobre o contato"></textarea>
+                            <button type="submit" class="btn btn-primary btn-block mt-2">Salvar</button>
+                        </form>
                     </div><!-- col -->
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="wd-100p d-flex flex-column flex-sm-row justify-content-end">
-                    <div class="dropup mg-b-15 mg-sm-b-0 mg-sm-r-auto">
-                        <button type="button" class="btn btn-block bd bd-gray-300" data-toggle="dropdown">Add More
-                            Fields <i class="icon ion-ios-arrow-up mg-l-5"></i></button>
-                        <div class="dropdown-menu tx-13">
-                            <a href="#" class="dropdown-item">Email</a>
-                            <a href="#" class="dropdown-item">Phone</a>
-                            <a href="#" class="dropdown-item">Address</a>
-                            <a href="#" class="dropdown-item">Custom</a>
-                        </div><!-- dropdown-menu -->
-                    </div>
-                    <button type="button" class="btn btn-primary mg-b-5 mg-sm-b-0">Save Changes</button>
-                    <button type="button" class="btn btn-secondary mg-sm-l-5" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary mg-sm-l-5" data-dismiss="modal">Cancelar</button>
                 </div>
             </div><!-- modal-footer -->
         </div><!-- modal-content -->
@@ -679,11 +578,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="mg-b-0">Do you really want to delete this contact?</p>
+                <p class="mg-b-0">Deseja realmente deletar esse contato?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Continue Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="" id="deletar" class="btn btn-primary">Deletar</a>
             </div>
         </div>
     </div>
@@ -692,7 +591,7 @@
 
 @section('scripts')
 
-<script src="{{asset('admin/lib/js/dashforge.contacts.js')}}"></script>
+<script src="{{asset('admin/js/dashforge.contacts.js')}}"></script>
 <!-- append theme customizer -->
 <script src="{{asset('admin/lib/js-cookie/js.cookie.js')}}"></script>
 <script src="{{asset('admin/js/dashforge.settings.js')}}"></script>

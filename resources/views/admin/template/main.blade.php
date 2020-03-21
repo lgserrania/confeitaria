@@ -102,8 +102,7 @@
 			</div>
 		</div>
     </div>
-	@yield("extras")
-	<script src="{{asset('admin/quill/quill.min.js')}}"></script>
+    @yield("extras")
     <script src="{{ asset('admin/lib/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('admin/lib/feather-icons/feather.min.js') }}"></script>
