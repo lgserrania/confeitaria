@@ -7,12 +7,7 @@ use Illuminate\Http\Request;
 class ProdutosController extends Controller
 {
     //
-
-    public function bolos(){
-        return view("admin.produtos.bolos");
-    }
-
-    public function variados(){
+    public function index(){
         return view("admin.produtos.variados");
     }
 }
