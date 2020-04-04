@@ -10,6 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Rotas do site
+Route::group(['middleware' => ['carrinho']], function(){
+    Route::get("/", "SiteController@index")->name("inicio");
+    Route::get("/sobre", "SiteController@sobre")->name("sobre");
+    Route::get("/produtos", "SiteController@produtos")->name("produtos");
+    Route::post("/carrinho/adicionar/produto", "CarrinhoController@adicionarProduto")->name("carrinho.adicionar.produto");
+    Route::post("/carrinho/adicionar/bolo", "CarrinhoController@adicionarBolo")->name("carrinho.adicionar.bolo");
+    Route::get("/carrinho/checkout", "CarrinhoController@checkout")->name("carrinho.checkout");
+    Route::get("/teste", "CarrinhoController@teste")->name("carrinho.adicionar.teste");
+});
+
+//Rotas do pagseguro
+Route::get("/pagseguro/redirect", "PagseguroController@redirect")->name("pagseguro.redirect");
+Route::get("/pagseguro/notification", "PagseguroController@notification")->name("pagseguro.notification");
 
 //Rotas do painel
 Route::get("/painel", "PainelController@index")->name("painel.index");
@@ -23,6 +37,19 @@ Route::get("/painel/pedidos/calendario", "PedidosController@calendario")->name("
 
 //Produtos
 Route::get("/painel/produtos/variados", "ProdutosController@index")->name("painel.produtos.variados");
+Route::get("/painel/produtos/variados/editar/{id}", "ProdutosController@editar_produto")->name("painel.produtos.variados.editar");
+Route::post("/painel/produtos/variados/atualizar/{id}", "ProdutosController@atualizar_produto")->name("painel.produtos.variados.atualizar");
+Route::post("/painel/produtos/variados/salvar", "ProdutosController@salvar_produto")->name("painel.produtos.salvar");
+Route::get("/painel/produtos/variados/excluir/{id}", "ProdutosController@excluir_produto")->name("painel.produtos.variados.excluir");
+Route::post("/painel/produtos/variados/categoria/salvar", "ProdutosController@salvar_categoria")->name("painel.produtos.categoria.salvar");
+Route::post("/painel/produtos/variados/tamanho/salvar", "ProdutosController@salvar_tamanho")->name("painel.produtos.tamanho.salvar");
+Route::post("/painel/produtos/variados/tamanho/editar/{id}", "ProdutosController@editar_tamanho")->name("painel.produtos.tamanho.editar");
+Route::get("/painel/produtos/variados/tamanho/excluir/{id}", "ProdutosController@excluir_tamanho")->name("painel.produtos.tamanho.excluir");
+Route::post("/painel/produtos/variados/sabor/salvar", "ProdutosController@salvar_sabor")->name("painel.produtos.sabor.salvar");
+Route::post("/painel/produtos/variados/sabor/editar/{id}", "ProdutosController@editar_sabor")->name("painel.produtos.sabor.editar");
+Route::get("/painel/produtos/variados/sabor/excluir/{id}", "ProdutosController@excluir_sabor")->name("painel.produtos.sabor.excluir");
+Route::post("/painel/produtos/variados/imagem/salvar", "ProdutosController@salvar_imagem")->name("painel.produtos.imagem.salvar");
+Route::get("/painel/produtos/variados/imagem/excluir/{id}", "ProdutosController@excluir_imagem")->name("painel.produtos.imagem.excluir");
 
 //Bolos
 Route::get("/painel/produtos/bolos", "BolosController@index")->name("painel.produtos.bolos");

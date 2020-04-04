@@ -10,6 +10,6 @@ class TamanhoProduto extends Model
     protected $fillable = ["nome", "preco", "produto_id"];
 
     public function produto(){
-        return $this->belongsTo("App\Produto");
+        return $this->belongsTo("App\Produto", "id", "produto_id");
     }
 }
