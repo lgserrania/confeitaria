@@ -21,4 +21,12 @@ class SiteController extends Controller
         $produtos = Produto::orderBy("nome","ASC")->get();
         return view("site.page-products-list")->with("produtos", $produtos);
     }
+
+    public function contato(){
+        return view("site.page-contact");
+    }
+
+    public function galeria(){
+        return view("site.page-galeria");
+    }
 }

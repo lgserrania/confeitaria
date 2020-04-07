@@ -164,6 +164,8 @@
     <!-- Panel Mobile -->
     <?php include 'modal_panelmobile.php'; ?>
 
+    @include('site.modal_bolos')  
+
     <!-- Body Overlay -->
     <div id="body-overlay"></div>
 

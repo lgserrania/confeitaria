@@ -133,6 +133,8 @@
     <!-- Panel Mobile -->
     @include('site.modal_panelmobile')
 
+    @include('site.modal_bolos')  
+
     <!-- Body Overlay -->
     <div id="body-overlay"></div>
 

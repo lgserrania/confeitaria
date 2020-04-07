@@ -56,7 +56,7 @@
         <!-- Page Title -->
         <div class="page-title bg-dark dark">
             <!-- BG Image -->
-            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/photos/bg-croissant.jpg')}}"> alt=""></div>
+            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/photos/bg-croissant.jpg')}}"alt=""></div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 push-lg-4">
@@ -122,7 +122,8 @@
                     </div>
                     <div class="col-xl-8 pull-xl-4 col-lg-7 pull-lg-5">
                         <div class="bg-white p-4 p-md-5 mb-4">
-                            <form>
+                            <form action="{{route('carrinho.finalizar')}}" method="POST">
+                                @csrf
                                 <h4 class="border-bottom pb-4"><i class="ti ti-user mr-3 text-primary"></i>Informações básicas</h4>
                                 <div class="row mb-5">
                                     <div class="form-group col-sm-6">
@@ -139,22 +140,71 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>CPF:</label>
-                                        <input type="text" name="cpf" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" class="form-control" required>
+                                        <input type="text" name="cpf" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" title="Digite um cpf válido. Ex: 123.123.123-12" class="form-control" required>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label>Seu endereço:</label>
-                                        <input type="text" name="endereco" class="form-control" required>
+                                        <label>CEP:</label>
+                                        <input type="text" pattern= "\d{5}-?\d{3}" title="Digite um cep válido. Ex: 37143-000" name="cep" class="form-control" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Rua:</label>
+                                        <input type="text" name="rua" class="form-control" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Número:</label>
+                                        <input type="text" name="numero" class="form-control" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Bairro:</label>
+                                        <input type="text" name="bairro" class="form-control" required>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label>Cidade:</label>
                                         <input type="text" name="cidade" class="form-control" required>
                                     </div>
                                     <div class="form-group col-sm-6">
+                                        <label for="">Estado</label>
+                                        <select class="form-control" name="estado" id="">
+                                            <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="PB">Paraíba</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="PI">Piauí</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RN">Rio Grande do Norte</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="RO">Rondônia</option>
+                                                <option value="RR">Roraima</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="SE">Sergipe</option>
+                                                <option value="TO">Tocantins</option>
+                                                <option value="EX">Estrangeiro</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        <label>Cod. Área</label>
+                                        <input type="text" pattern="\d{2}" title="Por favor, informe os dois dígitos do seu código de área sem parênteses" name="telefone" class="form-control" placeholder="Ex: 35" required>
+                                    </div>
+                                    <div class="form-group col-sm-4">
                                         <label>Telefone de contato:</label>
-                                        <input type="text" name="telefone" class="form-control" required>
+                                        <input type="text" name="telefone" pattern="\d{9}" title="Por favor, informe os 9 dígitos do seu número de telefone" class="form-control" placeholder="Ex: 912345678" required>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label>E-mail (Opcional):</label>
+                                        <label>E-mail:</label>
                                         <input type="email" name="email" class="form-control" required>
                                     </div>
                                 </div>
@@ -169,7 +219,11 @@
                                                 <option value="1">Agendado</option>
                                             </select>
                                         </div>
-                                    </div>                 
+                                    </div>   
+                                    <div class="form-group col-sm-6">
+                                        <label>Horário:</label>
+                                        <input type="text" class="form-control" pattern="\d{2}:\d{2}" title="Informe o horário no formato 00:00" name="horaAgendamento" placeholder="Ex: 12:00" aria-describedby="helpId">
+                                    </div>                
                                 </div>
 
                                 <div class="row mb-5">
@@ -181,13 +235,7 @@
                                         </div>
                                     </div>               
                                 </div>
-
-                                <div class="row mb-5">
-                                    <div class="col-md-12">
-                                        <span id="frase-agendado"></span>    
-                                    </div>               
-                                </div>
-
+                                
                                 {{-- <h4 class="border-bottom pb-4"><i class="ti ti-wallet mr-3 text-primary"></i>Pagamento</h4>
                                 <div class="row text-lg">
                                     <div class="col-md-4 col-sm-6 form-group">
@@ -231,6 +279,8 @@
 
     <!-- Body Overlay -->
     <div id="body-overlay"></div>
+
+    @include('site.modal_bolos')  
 
   </div>
 

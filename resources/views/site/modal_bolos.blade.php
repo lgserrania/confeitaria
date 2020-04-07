@@ -211,7 +211,7 @@
             _arr_recheio.push($(this).val());
         });
         var _cobertura = $("input[name='cobertura']:checked").val();
-        var _mensagem = $("input[name='mensagem']").val();
+        var _mensagem = $("textarea[name='mensagem']").val();
         $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

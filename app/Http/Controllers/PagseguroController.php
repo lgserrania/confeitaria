@@ -8,7 +8,7 @@ class PagseguroController extends Controller
 {
     //
     public function redirect(){
-        return view("site.index");
+        return view("site.page-confirmacao");
     }
 
     public function notification(){

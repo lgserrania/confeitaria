@@ -2,14 +2,14 @@
 
 return [
     /* DEFINE SE SERÁ UTILIZADO O AMBIENTE DE TESTES */
-    'use-sandbox' => false,
+    'use-sandbox' => true,
 
     /*
      * Coloque abaixo as informações do seu cadastro no PagSeguro
      */
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
         'email' => 'comercial@pedacomagico.com.br',
-        'token' => 'be12ce57-c0b7-47c4-beda-7c7e7b472ba43ed0b8d0498584ea808cf3bd466622920c69-c11d-48be-894b-0ffb943cc60b',
+        'token' => '420FEB3BDFD24883B3BD3E118A9E2D51',
     ],
 
     /*

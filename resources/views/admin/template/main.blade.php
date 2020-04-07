@@ -32,35 +32,22 @@
 		<div class="aside-body">
 		  	<div class="aside-loggedin">
 				<div class="d-flex align-items-center justify-content-start">
-					<a href="#" class="avatar"><img src="{{asset('admin/img/img1.png')}}" class="rounded-circle" alt=""></a>
 					<div class="aside-alert-link">
-						<a href="app-mensagens.php" class="new" data-toggle="tooltip" title="Você tem 2 novas mensagens"><i data-feather="message-square"></i></a>
-						<a href="prod-pedidos.php" class="new" data-toggle="tooltip" title="Você tem 4 novos pedidos"><i data-feather="bell"></i></a>
-						<a href="#" data-toggle="tooltip" title="Sair"><i data-feather="log-out"></i></a>
+						<a href="{{route('painel.logout')}}" data-toggle="tooltip" title="Sair"><i data-feather="log-out"></i></a>
 					</div>
 				</div>
 				<div class="aside-loggedin-user">
-				<a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2" data-toggle="collapse">
-					<h6 class="tx-semibold mg-b-0">Confeitaria Pedaço Mágico</h6>
-					<i data-feather="chevron-down"></i>
-				</a>
-				<p class="tx-color-03 tx-12 mg-b-0">Administrador</p>
-				</div>
-				<div class="collapse" id="loggedinMenu">
-				<ul class="nav nav-aside mg-b-0">
-					<li class="nav-item"><a href="#" class="nav-link"><i data-feather="edit"></i> <span>Editar Perfil</span></a></li>
-					<li class="nav-item"><a href="#" class="nav-link"><i data-feather="user"></i> <span>Administrar contas</span></a></li>
-					<li class="nav-item"><a href="#" class="nav-link"><i data-feather="settings"></i> <span>Configurações</span></a></li>
-					<li class="nav-item"><a href="#" class="nav-link"><i data-feather="help-circle"></i> <span>Central de ajuda</span></a></li>
-					<li class="nav-item"><a href="#" class="nav-link"><i data-feather="log-out"></i> <span>Sair</span></a></li>
-				</ul>
+					<a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2" data-toggle="collapse">
+						<h6 class="tx-semibold mg-b-0">Confeitaria Pedaço Mágico</h6>
+					</a>
+					<p class="tx-color-03 tx-12 mg-b-0">Administrador</p>
 				</div>
 		  	</div><!-- aside-loggedin -->
 			<ul class="nav nav-aside">
 		
-				<li class="nav-label">Análise de Dados</li>
+				{{-- <li class="nav-label">Análise de Dados</li>
 				<li class="nav-item active"><a href="{{route('painel.index')}}" class="nav-link"><i data-feather="globe"></i> <span>Tráfego do Site</span></a></li>
-				<li class="nav-item"><a href="{{route('painel.vendas.dados')}}" class="nav-link"><i data-feather="shopping-bag"></i> <span>Dados de Vendas</span></a></li>
+				<li class="nav-item"><a href="{{route('painel.vendas.dados')}}" class="nav-link"><i data-feather="shopping-bag"></i> <span>Dados de Vendas</span></a></li> --}}
 		
 				<li class="nav-label mg-t-25">Produtos</li>
 				<li class="nav-item"><a href="{{route('painel.pedidos.controle')}}" class="nav-link"><i data-feather="check-square"></i> <span>Controle de Pedidos</span></a></li>
@@ -74,11 +61,11 @@
 				<li class="nav-item"><a href="{{route('painel.utilitarios.mensagens')}}" class="nav-link"><i data-feather="mail"></i> <span>Mensagens</span></a></li>
 				<!-- <li class="nav-item"><a href="app-chat.php" class="nav-link"><i data-feather="message-square"></i> <span>Chat</span></a></li> -->
 		
-				<li class="nav-label mg-t-25">Conteúdo site</li>
-				<li class="nav-item"><a href="page-manager.php" class="nav-link"><i data-feather="file-text"></i> <span>Páginas</span></a></li>
+				{{-- <li class="nav-label mg-t-25">Conteúdo site</li>
+				<li class="nav-item"><a href="{{route('painel.page.manager')}}" class="nav-link"><i data-feather="file-text"></i> <span>Páginas</span></a></li>
 				<li class="nav-item"><a href="page-manager-destaques.php" class="nav-link"><i data-feather="image"></i> <span>Destaques</span></a></li>
 				<li class="nav-item"><a href="page-manager-blog.php" class="nav-link"><i data-feather="align-center"></i> <span>Blog</span></a></li>
-				<li class="nav-item"><a href="page-manager-banners.php" class="nav-link"><i data-feather="tag"></i> <span>Banners</span></a></li>
+				<li class="nav-item"><a href="page-manager-banners.php" class="nav-link"><i data-feather="tag"></i> <span>Banners</span></a></li> --}}
 		
 			</ul>
 		</div>
@@ -86,15 +73,7 @@
 	  
 	<div class="content ht-100v pd-0">
 		<div class="content-header">
-			<div class="content-search">
-				<i data-feather="search"></i>
-				<input type="search" class="form-control" placeholder="Pesquisar...">
-			</div>
-			<nav class="nav">
-				<a href="#" class="nav-link" data-toggle="tooltip" title="Alguma dúvida?"><i data-feather="help-circle"></i></a>
-				<!-- <a href="#" class="nav-link"><i data-feather="grid"></i></a>
-				<a href="#" class="nav-link"><i data-feather="align-left"></i></a> -->
-			</nav>
+
 		</div><!-- content-header -->
 		<div class="content-body">
 			<div class="container pd-x-0">

@@ -25,8 +25,8 @@
                     pedidos</label>
                 <nav class="nav nav-sidebar tx-13">
                     <a href="#" class="nav-link active"><i data-feather="folder"></i> <span>Todos Pedidos</span></a>
-                    <a href="#" class="nav-link"><i data-feather="folder"></i> <span>Bolos</span></a>
-                    <a href="#" class="nav-link"><i data-feather="folder"></i> <span>Variados</span></a>
+                    {{-- <a href="#" class="nav-link"><i data-feather="folder"></i> <span>Bolos</span></a>
+                    <a href="#" class="nav-link"><i data-feather="folder"></i> <span>Variados</span></a> --}}
                 </nav>
             </div>
 
@@ -37,21 +37,6 @@
     <div class="filemgr-content">
         <div class="filemgr-content-header">
             <h4 class="mg-b-0">Controle de Pedidos</h4>
-
-            <!-- <nav class="nav d-none d-sm-flex mg-r-auto mg-l-15">
-          <div class="dropdown dropdown-icon flex-fill">
-            <button class="btn btn-xs btn-block btn-white" data-toggle="dropdown">Adicionar <i data-feather="chevron-down"></i></button>
-            <div class="dropdown-menu tx-13">
-              <a href="#modalViewDetails" data-toggle="modal" class="dropdown-item details"><i data-feather="image"></i><span>Imagem</span></a>
-              <a href="#modalViewDetails" data-toggle="modal" class="dropdown-item details"><i data-feather="file"></i><span>Arquivo</span></a>
-            </div>
-          </div>
-
-          <div class="flex-fill mg-l-10">
-            <button class="btn btn-xs btn-block btn-primary">Salvar</button>
-          </div>
-      </nav> -->
-
         </div><!-- filemgr-content-header -->
         <div class="filemgr-content-body">
             <div class="pd-20 pd-lg-25 pd-xl-30">
@@ -63,7 +48,7 @@
                     <div class="col-12 col-sm-12 col-md-12 col-xl">
                         <div class="card card-file">
 
-                            <div class="card-body mg-b-20">
+                            {{-- <div class="card-body mg-b-20">
                                 <div class="d-md-flex align-items-center justify-content-between">
                                     <div class="media align-sm-items-center">
                                         <div class="tx-40 tx-lg-60 lh-0 tx-orange"></div>
@@ -81,15 +66,8 @@
                                             </div>
                                         </div><!-- media-body -->
                                     </div><!-- media -->
-                                    <div class="d-flex flex-column flex-sm-row mg-t-20 mg-md-t-0">
-                                        <button class="btn btn-sm btn-white btn-uppercase pd-x-15"><i
-                                                data-feather="download" class="mg-r-5"></i> Exportar Lista</button>
-                                        <a href="dados-vendas.php"
-                                            class="btn btn-sm btn-white btn-uppercase pd-x-15 mg-t-5 mg-sm-t-0 mg-sm-l-5"><i
-                                                data-feather="eye" class="mg-r-5"></i>Mais Detalhes</a>
-                                    </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="card-body">
 
@@ -98,61 +76,27 @@
                                         <tr>
                                             <th scope="col">ID Pedido</th>
                                             <th scope="col">Data do Pedido</th>
-                                            <th scope="col">Produto</th>
-                                            <th scope="col">Quant.</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Valor</th>
                                             <th scope="col">Ver</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">#0333333</th>
-                                            <td>02 Jan 20 - 12:30:01</td>
-                                            <td>Bolo Personalizado</td>
-                                            <td>1 Unid.</td>
-                                            <td>Pendente</td>
-                                            <td>R$ 60,00</td>
-                                            <td>
-                                                <nav class="nav d-none d-sm-flex mg-r-auto">
-                                                    <div class="flex-fill"><a href="prod-pedidos-detalhes.php"
-                                                            class="btn btn-xs btn-block btn-white"><i
-                                                                data-feather="eye"></i></a></div>
-                                                </nav><!-- para pedidos ainda não visualizados -->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">#0222222</th>
-                                            <td>01 Jan 20 - 02:00:01</td>
-                                            <td>Bolo Personalizado</td>
-                                            <td>1 Unid.</td>
-                                            <td>Em produção</td>
-                                            <td>R$ 65,00</td>
-                                            <td>
-                                                <nav class="nav d-none d-sm-flex mg-r-auto">
-                                                    <div class="flex-fill"><a href="prod-pedidos-detalhes.php"
-                                                            class="btn btn-xs btn-block btn-primary"><i
-                                                                data-feather="eye"></i></a></div>
-                                                </nav>
-                                                <!-- para pedidos já visualizados, podem estar em produção ou não -->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">#0111111</th>
-                                            <td>13 Dez 19 - 12:30:01</td>
-                                            <td>Bolo de Pote</td>
-                                            <td>4 Unid.</td>
-                                            <td>Entregue</td>
-                                            <td>R$ 80,00</td>
-                                            <td>
-                                                <nav class="nav d-none d-sm-flex mg-r-auto">
-                                                    <div class="flex-fill"><a href="prod-pedidos-detalhes.php"
-                                                            class="btn btn-xs btn-block btn-success"><i
-                                                                data-feather="eye"></i></a></div>
-                                                </nav><!-- para pedidos que já foram entregues -->
-                                            </td>
-                                        </tr>
-
+                                        @foreach($pedidos as $pedido)
+                                            <tr>
+                                                <th scope="row">#{{$pedido->id}}</th>
+                                                <td>{{date("d/m/Y", strtotime($pedido->created_at))}}</td>
+                                                <td>{{$pedido->status}}</td>
+                                                <td>{{number_format($pedido->total, 2, ",", ".")}}</td>
+                                                <td>
+                                                    <nav class="nav d-none d-sm-flex mg-r-auto">
+                                                        <div class="flex-fill"><a href="{{route('painel.pedidos.detalhe', ['id' => $pedido->id])}}"
+                                                                class="btn btn-xs btn-block btn-white"><i
+                                                                    data-feather="eye"></i></a></div>
+                                                    </nav><!-- para pedidos ainda não visualizados -->
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 

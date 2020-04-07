@@ -22,8 +22,13 @@ class CreatePedidosTable extends Migration
             $table->string("cpf");
             $table->string("cidade");
             $table->string("telefone");
+            $table->string("codigo");
+            $table->string("status")->default("Aguardando produção");
+            $table->string("link");
+            $table->dateTime('agendamento')->nullable();
+            $table->string("hora")->nullable();
+            $table->double('total', 15, 8)->default(123.4567);;
             $table->string("email")->nullable();
-
             $table->timestamps();
         });
     }

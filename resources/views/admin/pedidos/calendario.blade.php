@@ -19,7 +19,7 @@
 @endsection
 
 @section('conteudo')
-<div class="content-body pd-0">
+<div class="content-body pd-0" style="height:100vh">
     <div id="calendar" class="calendar-content-body"></div>
 </div>
 </div><!-- content -->
@@ -99,27 +99,25 @@
             <div class="modal-header">
                 <h6 class="event-title"></h6>
                 <nav class="nav nav-modal-event">
-                    <a href="#" class="nav-link"><i data-feather="external-link"></i></a>
-                    <a href="#" class="nav-link"><i data-feather="trash-2"></i></a>
                     <a href="#" class="nav-link" data-dismiss="modal"><i data-feather="x"></i></a>
                 </nav>
             </div><!-- modal-header -->
             <div class="modal-body">
                 <div class="row row-sm">
                     <div class="col-sm-6">
-                        <label class="tx-uppercase tx-sans tx-11 tx-medium tx-spacing-1 tx-color-03">Start Date</label>
+                        <label class="tx-uppercase tx-sans tx-11 tx-medium tx-spacing-1 tx-color-03">Criação do Pedido</label>
                         <p class="event-start-date"></p>
                     </div>
                     <div class="col-sm-6">
-                        <label class="tx-uppercase tx-sans tx-11 tx-medium tx-spacing-1 tx-color-03">End Date</label>
+                        <label class="tx-uppercase tx-sans tx-11 tx-medium tx-spacing-1 tx-color-03">Entrega</label>
                         <p class="event-end-date"></p>
                     </div><!-- col-6 -->
                 </div><!-- row -->
 
-                <label class="tx-uppercase tx-sans tx-11 tx-medium tx-spacing-1 tx-color-03">Description</label>
+                <label class="tx-uppercase tx-sans tx-11 tx-medium tx-spacing-1 tx-color-03">Descrição</label>
                 <p class="event-desc tx-gray-900 mg-b-40"></p>
 
-                <a href="#" class="btn btn-secondary pd-x-20" data-dismiss="modal">Close</a>
+                <a href="#" class="btn btn-secondary pd-x-20" data-dismiss="modal">Fechar</a>
             </div><!-- modal-body -->
         </div><!-- modal-content -->
     </div><!-- modal-dialog -->
@@ -136,7 +134,61 @@
 <script src="{{asset('admin/lib/jqueryui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('admin/lib/moment/min/moment.min.js')}}"></script>
 <script src="{{asset('admin/lib/fullcalendar/fullcalendar.min.js')}}"></script>
-<script src="{{asset('admin/js/calendar-events.js')}}"></script>
+{{-- <script src="{{asset('admin/js/calendar-events.js')}}"></script> --}}
+<script>
+
+    var curYear = moment().format('YYYY');
+    var curMonth = moment().format('MM');
+    var pedidos;
+    pedidos = $.ajax({
+        type: 'GET',       
+        url: "/api/pedidos",
+        dataType: 'json',
+        context: document.body,
+        global: false,
+        async:false,
+        success: function(data) {
+            return data;
+        }
+    }).responseJSON;
+    
+    var pedidosBolos = {
+        id: 1,
+        backgroundColor: 'rgba(1,104,250, .15)',
+        borderColor: '#0168fa',
+        events: []
+    };
+    //alert(pedidos.bolos);
+    pedidos.forEach(function(pedido){
+        var agendamento = null;
+        if(pedido.agendamento){
+            agendamento = pedido.agendamento;
+        }else{
+            agendamento = "{!! date("Y-m-d") . "T" !!}";
+            agendamento = agendamento + pedido.hora;
+        }
+        pedidosBolos.events.push({
+            id: pedido.id,
+            start: pedido.created_at,
+            end: agendamento,
+            title: pedido.nome + " " + pedido.sobrenome,
+            description: "Clique <b><a href='/painel/pedidos/detalhe/" + pedido.id + "'> aqui </a></b> para visualizar os detalhes do pedido"
+        });
+    });
+{{-- 
+    pedidos.bolos.forEach(function(bolo){
+        //alert(bolo.id);
+        if()
+        pedidosBolos.events.push({
+            id: bolo.id,
+            start: bolo.created_at,
+            end: bolo.created_at,
+            title: "Bolo " + bolo.categoria.nome,
+            description: bolo.mensagem
+        });
+    }); --}}
+
+</script>
 <script src="{{asset('admin/js/dashforge.calendar.js')}}"></script>
 
 <script>

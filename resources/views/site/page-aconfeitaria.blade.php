@@ -105,13 +105,15 @@
     <!-- Panel Mobile -->
     @include('site.modal_panelmobile')
 
+    @include('site.modal_bolos')  
+
     <!-- Body Overlay -->
     <div id="body-overlay"></div>
 
   </div>
 
   <!-- Modal / Product -->
-  @include('site.modal_products')
+  
 
   <!-- JS Plugins -->
   <script src="{{asset('site/assets/plugins/jquery/dist/jquery.min.js')}}"></script>

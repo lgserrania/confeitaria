@@ -15,15 +15,15 @@
                 <!-- Navigation -->
                 <nav class="module module-navigation left mr-4">
                     <ul id="nav-main" class="nav nav-main">
-                        <li><a href="index.php">Home</a></li>
+                        <li><a href="{{route('inicio')}}">Home</a></li>
 
                         <li class="has-dropdown">
                             <a href="#">A Confeitaria</a>
                             <div class="dropdown-container">
                                 <ul class="dropdown-mega">
                                     <li><a href="{{route('sobre')}}">Sobre nós</a></li>
-                                    <li><a href="page-galeria.php">Galeria</a></li>
-                                    <li><a href="page-reviews.php">Reviews</a></li>
+                                    <li><a href="{{route('galeria')}}">Galeria</a></li>
+                                    {{-- <li><a href="page-reviews.php">Reviews</a></li> --}}
                                 </ul>
                                 <div class="dropdown-image">
                                     <img src="{{asset('site/assets/img/photos/dropdown-about.jpg')}}" alt="">
@@ -32,8 +32,8 @@
                         </li>
 
                         <li><a href="{{route('produtos')}}">Produtos</a></li>
-                        <li><a href="page-blog.php">Blog</a></li>
-                        <li><a href="page-contact.php">Contato</a></li>
+                        {{-- <li><a href="page-blog.php">Blog</a></li> --}}
+                        <li><a href="{{route('contato')}}">Contato</a></li>
 
                     </ul>
                 </nav>
@@ -64,7 +64,7 @@
     </div>
 
     <div class="module module-logo">
-        <a href="index.html">
+        <a href="{{route('inicio')}}">
             <img src="{{asset('site/assets/img/logo-horizontal-dark.svg')}}" alt="">
         </a>
     </div>
