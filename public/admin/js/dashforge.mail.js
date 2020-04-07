@@ -18,12 +18,21 @@ $(function(){
 
   // UI INTERACTION
   $('.mail-group-body .media').on('click', function(e){
-
+    var elements = $(this).children("input");
+    var qtd = elements.length;
     // removing previous selected item
     $('.mail-group .selected').removeClass('selected');
 
     $(this).addClass('selected');
     $(this).removeClass('unread');
+
+    $('#nomeTopo').html(elements[0].value);
+    $('#dataTopo').html(elements[4].value);
+    $('#assuntoMensagem').html(elements[1].value);
+    $('#nomeMensagem').html(elements[0].value);
+    $('#telefoneMensagem').html(elements[5].value);
+    $('#mensagemMensagem').html(elements[3].value);
+    $('#emailMensagem').html(elements[2].value);
 
     $('.mail-content-header').removeClass('d-none');
     $('.mail-content-body').removeClass('d-none');
