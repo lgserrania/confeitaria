@@ -16,6 +16,9 @@ class CreateCategoriaProdutosTable extends Migration
         Schema::create('categoria_produtos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("nome");
+            $table->string("slug");
+            $table->string("imagem")->nullable();
+            $table->integer("destaque")->default(0);
             $table->timestamps();
         });
     }

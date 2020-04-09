@@ -61,10 +61,10 @@
 				<li class="nav-item"><a href="{{route('painel.utilitarios.mensagens')}}" class="nav-link"><i data-feather="mail"></i> <span>Mensagens</span></a></li>
 				<!-- <li class="nav-item"><a href="app-chat.php" class="nav-link"><i data-feather="message-square"></i> <span>Chat</span></a></li> -->
 		
-				{{-- <li class="nav-label mg-t-25">Conteúdo site</li>
+				<li class="nav-label mg-t-25">Conteúdo site</li>
 				<li class="nav-item"><a href="{{route('painel.page.manager')}}" class="nav-link"><i data-feather="file-text"></i> <span>Páginas</span></a></li>
-				<li class="nav-item"><a href="page-manager-destaques.php" class="nav-link"><i data-feather="image"></i> <span>Destaques</span></a></li>
-				<li class="nav-item"><a href="page-manager-blog.php" class="nav-link"><i data-feather="align-center"></i> <span>Blog</span></a></li>
+				<li class="nav-item"><a href="{{route('painel.page.manager.destaques')}}" class="nav-link"><i data-feather="image"></i> <span>Destaques</span></a></li>
+				{{-- <li class="nav-item"><a href="page-manager-blog.php" class="nav-link"><i data-feather="align-center"></i> <span>Blog</span></a></li>
 				<li class="nav-item"><a href="page-manager-banners.php" class="nav-link"><i data-feather="tag"></i> <span>Banners</span></a></li> --}}
 		
 			</ul>

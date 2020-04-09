@@ -18,6 +18,8 @@ class CreateProdutosTable extends Migration
             $table->string("nome");
             $table->string("subtitulo")->default("");
             $table->text("descricao")->default("");
+            $table->integer("destaque")->default(0);
+            $table->string("imagem_destaque")->nullable();
             $table->unsignedBigInteger("categoria_id");
             $table->timestamps();
             $table->foreign('categoria_id')->references('id')->on('categoria_produtos')->onDelete('cascade');

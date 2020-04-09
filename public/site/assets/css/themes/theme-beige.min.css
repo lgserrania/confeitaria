@@ -2752,7 +2752,7 @@ section.protrude,
 }
 
 .bg-light {
-    background-color: #f3f4f4
+    background-color: #f8f4e8
 }
 
 .bg-black {
@@ -6509,5 +6509,27 @@ a.text-dark:focus {
     100% {
         filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
         opacity: 1
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    /* alteração ofertas especiais mobile */
+    html {
+        font-size: 13px;
+    }
+    .h2 {
+        font-size: 2.3rem !important;
+    }
+    .img {
+        max-width: 100%;
+        height: 200px !important;
+        -webkit-backface-visibility: hidden;
+        object-fit: cover;
+    }
+    .blockquote.blockquote-lg .blockquote-content {
+        padding: 1.3rem !important;
+    }
+    .hidden {
+        display: none;
     }
 }

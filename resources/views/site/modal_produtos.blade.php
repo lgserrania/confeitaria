@@ -30,7 +30,7 @@
                                     <label class="custom-control custom-radio">
                                         <input name="tamanho{{$produto->id}}" value="{{$tamanho->id}}" type="radio" class="custom-control-input">
                                         <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">{{$tamanho->nome}}</span>
+                                        <span class="custom-control-description">{{$tamanho->nome}} - R${{number_format($tamanho->preco + $sabor->preco, 2, ",", ".")}}</span>
                                     </label>
                                 </div>
                             @endforeach

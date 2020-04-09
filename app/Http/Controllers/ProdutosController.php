@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\CategoriaProduto;
 use App\TamanhoProduto;
@@ -30,7 +31,20 @@ class ProdutosController extends Controller
 
     public function atualizar_produto(Request $request, $id){
         $produto = Produto::find($id);
-        $produto->fill($request->all());
+        $dados = $request->all();
+        if($request->file("imagem_destaque")){
+            if($produto->imagem_destaque){
+                Storage::disk('produtos')->delete($produto->imagem_destaque);
+            }
+            $dados["imagem_destaque"] = $request->file("imagem_destaque")->store('images/produtos/destaque', ['disk' => 'produtos']);
+            // $request->merge(['imagem_destaque' => );
+        }
+
+        if(!$request->destaque){
+            $dados["destaque"] = "0";
+        }
+        // dd($dados);
+        $produto->fill($dados);
         $produto->save();
         return redirect()->route("painel.produtos.variados.editar", ["id" => $id]);
     }
@@ -48,6 +62,11 @@ class ProdutosController extends Controller
             Storage::disk('produtos')->delete($imagem->caminho);
             $imagem->delete();
         }
+
+        if($produto->imagem_destaque){
+            Storage::disk('produtos')->delete($produto->imagem_destaque);
+        }
+
         $produto->delete();
         return redirect()->route("painel.produtos.variados");
     }
@@ -110,6 +129,7 @@ class ProdutosController extends Controller
 
     public function salvar_categoria(Request $request){
         $categoria = new CategoriaProduto($request->all());
+        $categoria->slug = Str::slug($categoria->nome);
         $categoria->save();
         return redirect()->back();
     }

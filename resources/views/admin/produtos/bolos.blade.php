@@ -56,7 +56,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Categoria::all() as $categoria)
-                                                <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaCategoria{{$categoria->id}}" value="{{$categoria->id}}">{{$categoria->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -76,7 +76,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Tamanho::all() as $tamanho)
-                                                <option value="{{$tamanho->id}}">{{$tamanho->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaTamanho{{$tamanho->id}}" value="{{$tamanho->id}}">{{$tamanho->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -96,7 +96,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Formato::all() as $formato)
-                                                <option value="{{$formato->id}}">{{$formato->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaFormato{{$formato->id}}" value="{{$formato->id}}">{{$formato->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -116,7 +116,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Massa::all() as $massa)
-                                                <option value="{{$massa->id}}">{{$massa->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaMassa{{$massa->id}}" value="{{$massa->id}}">{{$massa->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -136,7 +136,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Recheio::all() as $recheio)
-                                                <option value="{{$recheio->id}}">{{$recheio->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaRecheio{{$recheio->id}}" value="{{$recheio->id}}">{{$recheio->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -156,7 +156,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Cobertura::all() as $cobertura)
-                                                <option value="{{$cobertura->id}}">{{$cobertura->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaCobertura{{$cobertura->id}}" value="{{$cobertura->id}}">{{$cobertura->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -176,7 +176,7 @@
                                     <div class="input-group">
                                         <select class="form-control select2" multiple="multiple">
                                             @foreach(App\Topo::all() as $topo)
-                                                <option value="{{$topo->id}}">{{$topo->nome}}</option>
+                                                <option data-toggle="modal" data-target="#modalEditaTopo{{$topo->id}}" value="{{$topo->id}}">{{$topo->nome}}</option>
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
@@ -413,6 +413,255 @@
 </div>
 
 <!-- modal -->
+
+@foreach(App\Tamanho::all() as $tamanho)
+
+    <div class="modal fade effect-scale" id="modalEditaTamanho{{$tamanho->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar Tamanho</h5>
+
+                    <form action="{{route('painel.bolos.tamanho.atualizar', ['id' => $tamanho->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="nome">Identificador</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$tamanho->nome}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço</label>
+                            <input type="text" class="form-control" name="preco" aria-describedby="helpId" value="{{$tamanho->preco}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.tamanho.excluir', ['id' => $tamanho->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+@endforeach
+
+@foreach(App\Formato::all() as $formato)
+
+    <div class="modal fade effect-scale" id="modalEditaFormato{{$formato->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar formato</h5>
+
+                    <form action="{{route('painel.bolos.formato.atualizar', ['id' => $formato->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="nome">Identificador</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$formato->nome}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço</label>
+                            <input type="text" class="form-control" name="preco" aria-describedby="helpId" value="{{$formato->preco}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.formato.excluir', ['id' => $formato->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+@endforeach
+
+@foreach(App\Massa::all() as $massa)
+
+    <div class="modal fade effect-scale" id="modalEditaMassa{{$massa->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar massa</h5>
+
+                    <form action="{{route('painel.bolos.massa.atualizar', ['id' => $massa->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="nome">Identificador</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$massa->nome}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço</label>
+                            <input type="text" class="form-control" name="preco" aria-describedby="helpId" value="{{$massa->preco}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.massa.excluir', ['id' => $massa->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+@endforeach
+
+@foreach(App\Recheio::all() as $recheio)
+
+    <div class="modal fade effect-scale" id="modalEditaRecheio{{$recheio->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar recheio</h5>
+
+                    <form action="{{route('painel.bolos.recheio.atualizar', ['id' => $recheio->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="nome">Identificador</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$recheio->nome}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço</label>
+                            <input type="text" class="form-control" name="preco" aria-describedby="helpId" value="{{$recheio->preco}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.recheio.excluir', ['id' => $recheio->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+@endforeach
+
+@foreach(App\Cobertura::all() as $cobertura)
+
+    <div class="modal fade effect-scale" id="modalEditaCobertura{{$cobertura->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar cobertura</h5>
+
+                    <form action="{{route('painel.bolos.cobertura.atualizar', ['id' => $cobertura->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="nome">Identificador</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$cobertura->nome}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço</label>
+                            <input type="text" class="form-control" name="preco" aria-describedby="helpId" value="{{$cobertura->preco}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.cobertura.excluir', ['id' => $cobertura->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+@endforeach
+
+@foreach(App\Topo::all() as $topo)
+
+    <div class="modal fade effect-scale" id="modalEditaTopo{{$topo->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar topo</h5>
+
+                    <form action="{{route('painel.bolos.topo.atualizar', ['id' => $topo->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="nome">Identificador</label>
+                        <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$topo->nome}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Preço</label>
+                            <input type="text" class="form-control" name="preco" aria-describedby="helpId" value="{{$topo->preco}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.topo.excluir', ['id' => $topo->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+
+@endforeach
+
+@foreach(App\Categoria::all() as $categoria)
+
+    <div class="modal fade effect-scale" id="modalEditaCategoria{{$categoria->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body pd-20 pd-sm-30">
+                    <button type="button" class="close pos-absolute t-15 r-20" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <h5 class="tx-18 tx-sm-20 mg-b-30">Editar categoria</h5>
+
+                    <form action="{{route('painel.bolos.categoria.atualizar', ['id' => $categoria->id])}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="nome">Identificador</label>
+                            <input type="text" class="form-control" name="nome" aria-describedby="helpId" value="{{$categoria->nome}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('painel.bolos.categoria.excluir', ['id' => $categoria->id])}}" class="btn btn-danger">Excluir</a>
+                    </form>
+
+                </div>
+                <!-- modal-footer -->
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+    
+@endforeach
+
 @endsection
 
 @section('scripts')
