@@ -90,7 +90,21 @@
     </div>
     
     <!-- Modal / Product -->
-    @include('site.modal_bolos')           
+    @include('site.modal_bolos')   
+    
+    @php $produto = \App\Produto::find($home->produto_pronta_entrega) @endphp
+
+    @include('site.modal_produtos_home')  
+
+    @php $produto = \App\Produto::find($home->produto_novo) @endphp
+
+    @include('site.modal_produtos_home') 
+
+    @foreach(\App\Produto::where("destaque","1")->get() as $produto)
+
+    @include('site.modal_produtos_home') 
+
+    @endforeach
     
     <!-- Video Modal / Demo -->
     @include('site.modal_video')           
@@ -115,6 +129,21 @@
 
     <!-- JS Stylewsitcher -->
     <script src="{{asset('site/styleswitcher/styleswitcher.js')}}"></script>
+
+    <script>
+        function adicionar(ppid){
+            var ttid = $("input[name='tamanho" + ppid + "']:checked").val();
+            var ssid = $("input[name='sabor" + ppid + "']:checked").val();
+            $.ajaxSetup({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+            });
+            $.post( "/carrinho/adicionar/produto",{tid : ttid, sid : ssid, pid : ppid}, function(data) {
+              location.reload(true);
+            });
+        }
+    </script>
 
 </body>
 

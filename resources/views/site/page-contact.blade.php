@@ -75,11 +75,11 @@
                                     <div class="row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
                                             <h6 class="mb-1 text-muted">Contato:</h6>
-                                            (35) 98888-8888
+                                            {{$contato->telefone}}
                                         </div>
                                         <div class="col-sm-6">
                                             <h6 class="mb-1 text-muted">E-mail:</h6>
-                                            <a href="#">contato@pedacomagico.com.br</a>
+                                            <a href="#">{{$contato->email}}</a>
                                         </div>
                                     </div>
                                 </div>

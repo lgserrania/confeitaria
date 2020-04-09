@@ -70,30 +70,18 @@
 
         <!-- Gallery Carousel -->
         <div class="gallery-carousel inner-controls">
-          <div class="slide">
-            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/gallery/gallery01.jpg')}}" alt=""></div>
-          </div>
-          <div class="slide">
-            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/gallery/gallery02.jpg')}}" alt=""></div>
-          </div>
-          <div class="slide">
-            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/gallery/gallery03.jpg')}}" alt=""></div>
-          </div>
-          <div class="slide">
-            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/gallery/gallery04.jpg')}}" alt=""></div>
-          </div>
-          <div class="slide">
-            <div class="bg-image bg-parallax"><img src="{{asset('site/assets/img/gallery/gallery05.jpg')}}" alt=""></div>
-          </div>
+          @foreach($fotos as $foto)
+            <div class="slide">
+              <div class="bg-image bg-parallax"><img src="{{asset($foto->imagem)}}" alt=""></div>
+            </div>
+          @endforeach
         </div>
 
         <!-- Gallery Carousel Nav -->
         <div class="gallery-nav">
-          <img src="{{asset('site/assets/img/gallery/gallery01-min.jpg')}}" alt="">
-          <img src="{{asset('site/assets/img/gallery/gallery02-min.jpg')}}" alt="">
-          <img src="{{asset('site/assets/img/gallery/gallery03-min.jpg')}}" alt="">
-          <img src="{{asset('site/assets/img/gallery/gallery04-min.jpg')}}" alt="">
-          <img src="{{asset('site/assets/img/gallery/gallery05-min.jpg')}}" alt="">
+          @foreach($fotos as $foto)
+            <img src="{{asset($foto->imagem)}}" alt="">
+          @endforeach
         </div>
 
         <div class="set-fullscreen">

@@ -58,8 +58,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-7 push-lg-5">
-              <h1 class="mb-0">A Confeitaria</h1>
-              <h4 class="text-muted mb-0">Mais de 15 anos de tradição</h4>
+              <h1 class="mb-0">{{$sobre->titulo_principal}}</h1>
+              <h4 class="text-muted mb-0">{{$sobre->subtitulo_principal}}</h4>
             </div>
           </div>
         </div>
@@ -78,13 +78,8 @@
               <i class="fa fa-star active"></i><i class="fa fa-star active"></i>
               <i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i>
             </div>
-            <h2>Tradição desde 2004!</h2>
-            <p class="lead">Donec a eros metus. Vivamus volutpat leo dictum risus ullamcorper condimentum. Cras sollicitudin varius condimentum. Praesent a dolor sem....</p>
-            <p>Nam eleifend elementum sapien et bibendum. Nunc ac diam efficitur, ultrices lorem quis, consectetur odio. Nullam vulputate, eros quis accumsan cursus, elit lectus bibendum nulla, sed dapibus ligula tellus at purus. Fusce id eros id mi cursus semper. Quisque efficitur bibendum nunc a consectetur. Maecenas vitae quam iaculis, scelerisque purus nec, varius purus. Nullam eget varius elit. Donec eget facilisis nunc, non rutrum lorem.</p>
-            <h6>Aroldo, Chef</h6>
-            <img src="{{asset('site/assets/img/svg/sign.svg')}}" alt="" class="mb-5">
-            <h4>o que falam sobre nós?</h4>
-            <a href="page-reviews.php" class="btn btn-outline-primary"><span>Veja nossos reviews</span></a>
+            <h2>{{$sobre->titulo_secundario}}</h2>
+            {!! $sobre->texto !!}
           </div>
         </div>
 

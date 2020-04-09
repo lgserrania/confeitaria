@@ -11,13 +11,19 @@ use App\Produto;
 use App\BoloPedido;
 use App\RecheioBoloPedido;
 use PagSeguro;
+use App\Classes\ClassCarrinho;
 
 class CarrinhoController extends Controller
 {
     //
 
     public function teste(){
-        dd(session()->get("carrinho")->bolos);
+        $code = "E5D236B2E669485B8B9C38AE9BEFC722";
+        $credentials = PagSeguro::credentials()->get();
+        //dd(PagSeguro::transaction());
+        $transaction = PagSeguro::transaction()->get($code, $credentials);
+        $information = $transaction->getInformation();
+        dd($information);
     }
 
     public function checkout(){
@@ -144,7 +150,12 @@ class CarrinhoController extends Controller
         $pedido->link = $information->getLink();
         $pedido->status = "Aguardando Pagamento";
         $pedido->save();
-        return redirect()->route("carrinho.confirmacao");
+        session(['carrinho' => new ClassCarrinho()]);
+        echo $information->getCode();
+        echo $information->getLink();
+        dd($information);
+        return redirect()->away($pedido->link);
+        //return redirect()->route("carrinho.confirmacao");
     }
 
     public function confirmacao(){

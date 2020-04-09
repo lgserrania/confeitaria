@@ -106,7 +106,7 @@
                               $preco_tamanho = $produto->tamanhos->min("preco");
                               $preco_sabor = $sabor->preco;
                             @endphp
-                            <span class="text-md mr-4"><span class="text-muted">apartir de</span> R${{number_format($preco_tamanho + $preco_sabor, "2", ".", ",")}}</span>
+                            <span class="text-md mr-4"><span class="text-muted">a partir de</span> R${{number_format($preco_tamanho + $preco_sabor, "2", ".", ",")}}</span>
                             <button class="btn btn-outline-secondary btn-sm" data-target="#{{Str::slug($produto->nome) . Str::slug($sabor)}}Modal" data-toggle="modal"><span>Comprar</span></button>
                           </div>
                         </div>
@@ -162,16 +162,24 @@
 
   <script>
 
+    $(document).ready(function(){
+		var url = window.location.href;
+		var id = url.split("#")[1];
+		$('html, body').animate({
+			scrollTop: $('#' + id + '').offset().top
+		}, 'slow');
+    });
+
     function adicionar(ppid, ssid){
-      var ttid = $("input[name='tamanho" + ppid + "']:checked").val();
-      $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-      });
-      $.post( "/carrinho/adicionar/produto",{tid : ttid, sid : ssid, pid : ppid}, function(data) {
-        location.reload(true);
-      });
+		var ttid = $("input[name='tamanho" + ppid + "']:checked").val();
+		$.ajaxSetup({
+			headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$.post( "/carrinho/adicionar/produto",{tid : ttid, sid : ssid, pid : ppid}, function(data) {
+			location.reload(true);
+		});
     }
 
   </script>

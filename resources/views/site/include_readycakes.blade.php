@@ -23,96 +23,25 @@
                     }
                 ]
             }'>
-            <div class="carousel-item">
-                <img src="{{asset('site/assets/img/posts/post01.jpg')}}" class="rounded" alt="">
-                <blockquote class="blockquote blockquote-lg" data-center-top="filter: blur(0); transform: scale(1);" data-bottom-top="transform: scale(0.9);">
-                    <div class="blockquote-content">
-                        <h2>Ovos de Páscoa</h2>
-                        <ul style="list-style-type: none; padding-left: 0px;">
-                            <li>Tamanhos 100g, 200g, 300g</li>
-                            <li>Pedidos pronta-entrega</li>
-                        </ul><br>
-                        <a href="#productModal" data-toggle="modal" class="btn btn-outline-primary"><span>Peça agora</span></a>
-                    </div>
-                </blockquote>
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('site/assets/img/posts/post01.jpg')}}" class="rounded" alt="">
-                <blockquote class="blockquote blockquote-lg" data-center-top="filter: blur(0); transform: scale(1);" data-bottom-top="transform: scale(0.9);">
-                    <div class="blockquote-content">
-                        <h2>Ovos de Páscoa</h2>
-                        <ul style="list-style-type: none; padding-left: 0px;">
-                            <li>Tamanhos 100g, 200g, 300g</li>
-                            <li>Pedidos pronta-entrega</li>
-                        </ul><br>
-                        <a href="#productModal" data-toggle="modal" class="btn btn-outline-primary"><span>Peça agora</span></a>
-                    </div>
-                </blockquote>
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('site/assets/img/posts/post01.jpg')}}" class="rounded" alt="">
-                <blockquote class="blockquote blockquote-lg" data-center-top="filter: blur(0); transform: scale(1);" data-bottom-top="transform: scale(0.9);">
-                    <div class="blockquote-content">
-                        <h2>Ovos de Páscoa</h2>
-                        <ul style="list-style-type: none; padding-left: 0px;">
-                            <li>Tamanhos 100g, 200g, 300g</li>
-                            <li>Pedidos pronta-entrega</li>
-                        </ul><br>
-                        <a href="#productModal" data-toggle="modal" class="btn btn-outline-primary"><span>Peça agora</span></a>
-                    </div>
-                </blockquote>
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('site/assets/img/posts/post01.jpg')}}" class="rounded" alt="">
-                <blockquote class="blockquote blockquote-lg" data-center-top="filter: blur(0); transform: scale(1);" data-bottom-top="transform: scale(0.9);">
-                    <div class="blockquote-content">
-                        <h2>Ovos de Páscoa</h2>
-                        <ul style="list-style-type: none; padding-left: 0px;">
-                            <li>Tamanhos 100g, 200g, 300g</li>
-                            <li>Pedidos pronta-entrega</li>
-                        </ul><br>
-                        <a href="#productModal" data-toggle="modal" class="btn btn-outline-primary"><span>Peça agora</span></a>
-                    </div>
-                </blockquote>
-            </div>
+            @foreach(\App\Produto::where("destaque","1")->get() as $produto)
+                <div class="carousel-item">
+                    <img src="{{asset($produto->imagem_destaque)}}" class="rounded" alt="">
+                    <blockquote class="blockquote blockquote-lg" data-center-top="filter: blur(0); transform: scale(1);" data-bottom-top="transform: scale(0.9);">
+                        <div class="blockquote-content">
+                            <h2>{{$produto->nome}}</h2>
+                            <ul style="list-style-type: none; padding-left: 0px;">
+                                @php  
+                                    $preco_tamanho = $produto->tamanhos->min("preco");
+                                    $preco_sabor = $produto->sabores->min("preco");
+                                @endphp
+                                <li>Preços a partir de R${{number_format($preco_tamanho + $preco_sabor, "2", ".", ",")}}</li>
+                            </ul><br>
+                            <a href="#Modal{{$produto->id}}" data-toggle="modal" class="btn btn-outline-primary"><span>Peça agora</span></a>
+                        </div>
+                    </blockquote>
+                </div>
+            @endforeach
         </div>
-        <!-- <div class="carousel" data-slick='{"dots": true}'>
-
-            <div class="special-offer">
-                <img src="{{asset('site/assets/img/photos/special-1.jpg')}}" alt="" class="special-offer-image">
-                <div class="special-offer-content">
-                    <h2 class="mb-2">Pronta Entrega</h2>
-                    <h5 class="text-muted mb-5">Bolo de Chocolate e Ninho!</h5>
-                    <ul class="list-check text-lg mb-0">
-                        <li>Válido até 17/03/20</li>
-                        <li class="false">Sem taxa de entrega inclusa</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="special-offer">
-                <img src="{{asset('site/assets/img/photos/special-2.jpg')}}" alt="" class="special-offer-image">
-                <div class="special-offer-content">
-                    <h2 class="mb-2">Promoção Produtos da Linha Ajoms</h2>
-                    <h5 class="text-muted mb-5">Compre da Linha Ajoms e receba R$5,00 de desconto na próxima compra!</h5>
-                    <ul class="list-check text-lg mb-0">
-                        <li>Bolos, Pavês e Tortas de Pote</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="special-offer">
-                <img src="{{asset('site/assets/img/photos/special-1.jpg')}}" alt="" class="special-offer-image">
-                <div class="special-offer-content">
-                    <h2 class="mb-2">Pronta Entrega</h2>
-                    <h5 class="text-muted mb-5">Bolo de Chocolate e Ninho!</h5>
-                    <ul class="list-check text-lg mb-0">
-                        <li>Válido até 17/03/20</li>
-                        <li class="false">Sem taxa de entrega inclusa</li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
     </div>
 
 

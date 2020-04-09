@@ -9,11 +9,7 @@ class PainelController extends Controller
 {
     //
     public function index(){
-        return view("admin.index");
-    }
-
-    public function page_manager(){
-        return view("admin.page_manager");
+        return redirect()->route("painel.pedidos.controle");
     }
 
     public function login(){

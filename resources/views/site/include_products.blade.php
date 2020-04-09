@@ -27,33 +27,14 @@
                         ]
                     }'>
         <!-- Menu Sample -->
-        <div class="menu-sample">
-            <a href="page-products-list.php#Burgers">
-                <img src="{{asset('site/assets/img/photos/menu-sample-dessert.jpg')}}" alt="" class="image">
-                <h3 class="title">Bolos</h3>
+        @foreach(\App\CategoriaProduto::where("destaque","1")->get() as $categoria)
+        <div class="menu-sample text-right">
+            <a href="{{route('produtos.categoria', ['slug' => $categoria->slug])}}">
+                <img src="{{asset($categoria->imagem)}}" alt="" class="image">
+                <h3 class="title">{{$categoria->nome}}</h3>
             </a>
         </div>
-        <!-- Menu Sample -->
-        <div class="menu-sample">
-            <a href="page-products-list.php#Pizza">
-                <img src="{{asset('site/assets/img/photos/menu-sample-dessert.jpg')}}" alt="" class="image">
-                <h3 class="title">Tortas</h3>
-            </a>
-        </div>
-        <!-- Menu Sample -->
-        <div class="menu-sample">
-            <a href="page-products-list.php#Sushi">
-                <img src="{{asset('site/assets/img/photos/menu-sample-dessert.jpg')}}" alt="" class="image">
-                <h3 class="title">Pavês</h3>
-            </a>
-        </div>
-        <!-- Menu Sample -->
-        <div class="menu-sample">
-            <a href="page-products-list.php#Pasta">
-                <img src="{{asset('site/assets/img/photos/menu-sample-dessert.jpg')}}" alt="" class="image">
-                <h3 class="title">Doces</h3>
-            </a>
-        </div>
+        @endforeach
     </div>
 
 </section>

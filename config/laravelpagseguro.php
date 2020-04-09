@@ -9,7 +9,9 @@ return [
      */
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
         'email' => 'comercial@pedacomagico.com.br',
-        'token' => '420FEB3BDFD24883B3BD3E118A9E2D51',
+        //'email' => 'v13719786470370117947@sandbox.pagseguro.com.br',
+        'token' => '420FEB3BDFD24883B3BD3E118A9E2D51'
+        //'token' => '6ff8ea55-06cc-418f-8fe9-d68d2c317bcd1cd718684c71bc2a48631425bb52567f7108-1643-465d-9899-97d79cccf55a',
     ],
 
     /*

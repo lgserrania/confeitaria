@@ -15,6 +15,7 @@ Route::group(['middleware' => ['carrinho']], function(){
     Route::get("/", "SiteController@index")->name("inicio");
     Route::get("/sobre", "SiteController@sobre")->name("sobre");
     Route::get("/produtos", "SiteController@produtos")->name("produtos");
+    Route::get("/produtos/{slug}", "SiteController@produtos_categoria")->name("produtos.categoria");
     Route::get("/contato", "SiteController@contato")->name("contato");
     Route::get("/galeria", "SiteController@galeria")->name("galeria");
     Route::post("/carrinho/adicionar/produto", "CarrinhoController@adicionarProduto")->name("carrinho.adicionar.produto");
@@ -65,13 +66,27 @@ Route::group(['middleware' => ['admin']], function(){
     //Bolos
     Route::get("/painel/produtos/bolos", "BolosController@index")->name("painel.produtos.bolos");
     Route::post("/painel/produtos/bolos/categoria/salvar", "BolosController@salvar_categoria")->name("painel.bolos.categoria.salvar");
+    Route::post("/painel/produtos/bolos/categoria/atualizar/{id}", "BolosController@atualizar_categoria")->name("painel.bolos.categoria.atualizar");
+    Route::get("/painel/produtos/bolos/categoria/excluir/{id}", "BolosController@excluir_categoria")->name("painel.bolos.categoria.excluir");
     Route::post("/painel/produtos/bolos/tamanho/salvar", "BolosController@salvar_tamanho")->name("painel.bolos.tamanho.salvar");
+    Route::post("/painel/produtos/bolos/tamanho/atualizar/{id}", "BolosController@atualizar_tamanho")->name("painel.bolos.tamanho.atualizar");
+    Route::get("/painel/produtos/bolos/tamanho/excluir/{id}", "BolosController@excluir_tamanho")->name("painel.bolos.tamanho.excluir");
     Route::post("/painel/produtos/bolos/formato/salvar", "BolosController@salvar_formato")->name("painel.bolos.formato.salvar");
+    Route::post("/painel/produtos/bolos/formato/atualizar/{id}", "BolosController@atualizar_formato")->name("painel.bolos.formato.atualizar");
+    Route::get("/painel/produtos/bolos/formato/excluir/{id}", "BolosController@excluir_formato")->name("painel.bolos.formato.excluir");
     Route::post("/painel/produtos/bolos/massa/salvar", "BolosController@salvar_massa")->name("painel.bolos.massa.salvar");
+    Route::post("/painel/produtos/bolos/massa/atualizar/{id}", "BolosController@atualizar_massa")->name("painel.bolos.massa.atualizar");
+    Route::get("/painel/produtos/bolos/massa/excluir/{id}", "BolosController@excluir_massa")->name("painel.bolos.massa.excluir");
     Route::post("/painel/produtos/bolos/recheio/salvar", "BolosController@salvar_recheio")->name("painel.bolos.recheio.salvar");
+    Route::post("/painel/produtos/bolos/recheio/atualizar/{id}", "BolosController@atualizar_recheio")->name("painel.bolos.recheio.atualizar");
+    Route::get("/painel/produtos/bolos/recheio/excluir/{id}", "BolosController@excluir_recheio")->name("painel.bolos.recheio.excluir");
     Route::post("/painel/produtos/bolos/cobertura/salvar", "BolosController@salvar_cobertura")->name("painel.bolos.cobertura.salvar");
+    Route::post("/painel/produtos/bolos/cobertura/atualizar/{id}", "BolosController@atualizar_cobertura")->name("painel.bolos.cobertura.atualizar");
+    Route::get("/painel/produtos/bolos/cobertura/excluir/{id}", "BolosController@excluir_cobertura")->name("painel.bolos.cobertura.excluir");
     Route::post("/painel/produtos/bolos/topo/salvar", "BolosController@salvar_topo")->name("painel.bolos.topo.salvar");
-
+    Route::post("/painel/produtos/bolos/topo/atualizar/{id}", "BolosController@atualizar_topo")->name("painel.bolos.topo.atualizar");
+    Route::get("/painel/produtos/bolos/topo/excluir/{id}", "BolosController@excluir_topo")->name("painel.bolos.topo.excluir");
+    
     //Utilitários
     Route::get("/painel/utilitarios/calculadora", "UtilitariosController@calculadora")->name("painel.utilitarios.calculadora");
     Route::get("/painel/utilitarios/mensagens", "UtilitariosController@mensagens")->name("painel.utilitarios.mensagens");
@@ -86,6 +101,21 @@ Route::group(['middleware' => ['admin']], function(){
 
     //Page manager
     Route::get("/painel/page/manager", "PageController@index")->name("painel.page.manager");
+    Route::get("/painel/page/manager/sobre", "PageController@sobre")->name("painel.page.manager.sobre");
+    Route::post("/painel/page/manager/sobre/salvar", "PageController@salvar_sobre")->name("painel.page.manager.sobre.salvar");
+    Route::get("/painel/page/manager/destaques", "PageController@destaques")->name("painel.page.manager.destaques");
+    Route::post("/painel/page/manager/destaques/salvar", "PageController@novo_destaque")->name("painel.page.manager.destaques.novo");
+    Route::post("/painel/page/manager/destaques/atualizar/{id}", "PageController@atualiza_destaque")->name("painel.page.manager.destaques.atualizar");
+    Route::get("/painel/page/manager/destaques/deletar/{id}", "PageController@excluir_destaque")->name("painel.page.manager.destaques.deletar");
+    Route::post("/painel/page/manager/categorias/imagem/adicionar/{id}", "PageController@adiciona_imagem_categoria")->name("painel.page.manager.categoria.imagem.adicionar");
+    Route::get("/painel/page/manager/categorias/destaque/{id}", "PageController@categoria_destaque")->name("painel.page.manager.categoria.destaque");
+    Route::get("/painel/page/manager/galeria", "PageController@galeria")->name("painel.page.manager.galeria");
+    Route::post("/painel/page/manager/galeria/adicionar", "PageController@adicionar_foto")->name("painel.page.manager.galeria.adicionar");
+    Route::get("/painel/page/manager/galeria/excluir/{id}", "PageController@excluir_foto")->name("painel.page.manager.galeria.excluir");
+    Route::get("/painel/page/manager/contato", "PageController@contato")->name("painel.page.manager.contato");
+    Route::post("/painel/page/manager/contato/salvar", "PageController@salvar_contato")->name("painel.page.manager.contato.salvar");
+
+
 });
 Route::get("/api/pedidos", "ApiController@pedidos")->name("api.pedidos");
 

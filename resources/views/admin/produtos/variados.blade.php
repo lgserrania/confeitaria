@@ -83,12 +83,34 @@
                     
                     <label class="d-block tx-medium tx-10 tx-uppercase tx-sans tx-spacing-1 tx-color-03 mg-b-15">Informações
                         do Produto</label>
-                    <form id="form-produto" action="{{route('painel.produtos.variados.atualizar', ['id' => $produto->id])}}" method="POST">
+                    <form id="form-produto" action="{{route('painel.produtos.variados.atualizar', ['id' => $produto->id])}}" method="POST" enctype="multipart/form-data">
                         <div class="row row-xs">
                             @csrf
                             <input type="hidden" name="descricao" id="descricao">
                             <div class="col-6 col-sm-4 col-md-3 col-xl">
                                 <div class="card card-file">
+
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                          <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" name="destaque" id="" value="1" @if($produto->destaque) checked @endif>
+                                            Tornar Destaque
+                                          </label>
+                                        </div>
+                                    </div>
+
+                                    @if($produto->destaque)
+                                        <div class="card-body">
+                                            @if($produto->imagem_destaque)
+                                                <img src="{{asset($produto->imagem_destaque)}}" style="max-width: 400px;" alt="">
+                                            @endif
+                                            <div class="form-group">
+                                            <label for="imagem_destaque">Imagem de Destaque</label>
+                                            <input type="file" class="form-control-file" name="imagem_destaque" id="imagem_destaque" placeholder="Escolha a imagem de destaque" aria-describedby="fileHelpId">
+                                            <small id="fileHelpId" class="form-text text-muted">Escolha a imagem de destaque do produto</small>
+                                            </div>
+                                        </div>
+                                    @endif
 
                                     <div class="card-body">
                                         <h6><a class="link-02 mg-b-10">Categoria</a></h6>
