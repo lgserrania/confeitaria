@@ -75,10 +75,8 @@
 		<div class="content-header">
 
 		</div><!-- content-header -->
-		<div class="content-body">
-			<div class="container pd-x-0">
-				@yield("conteudo")
-			</div>
+		<div class="content-body pd-0">
+			@yield("conteudo")
 		</div>
     </div>
     @yield("extras")
